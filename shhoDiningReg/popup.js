@@ -40,6 +40,7 @@ function doRegister(){
 	chrome.runtime.sendMessage({type:"DoReg", chklist:getchklist(), page:data.page});
 }
 
+
 /*Load popup window*/
 document.addEventListener('DOMContentLoaded', function () {
 	 //get diningList variable from background script
@@ -56,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 	else{
 		console.log("Adding list to page...");
-		$("#message").hide();
+		//$("#message").hide();
 		var table = $('#tbl');
 		dlist=data.dlist;
 		//dlist[id] is the text of specific dining event
@@ -74,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			)
 		}
 		//add page number at the low-left corner
-		$("#page").text('Page '+data.page);
+		$("#page").text('Page ' + data.page);
 	}
 	/*Add event listener to the register button*/
 	buttonobj = document.getElementById("regbtn");

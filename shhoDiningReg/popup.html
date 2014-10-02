@@ -3,30 +3,43 @@
     <title>Dining List</title>
     <style>
         table {
+		font-weight: bold;
 		width:100%;
         border-collapse: collapse;
         }
 		tr:nth-child(even) {background: #b8d1f3}
 		tr:nth-child(odd) {background: #dae5f4}		
 		body {
-		background: #dae5f4;
+		background: #EBEBFF	;
 		min-width: 365px;
 		max-width: 100%;
 		position: relative;
 		vertical-align:middle;
 		}
+		#bottom {
+		min-height: 25px;
+		background: #4D6DCD;
+		}
+		#message {
+		background: #4D6DCD;
+		}
 	</style>
   </head>
   
   <body>
-  <h3 id="message"></h3>
+  <div id="message">
+    <h3 style="color:#EBEBFF">Select dining events to register:</h3>
+  </div>
   <div id="content">
     <table id="tbl"></table>
   </div>
   </br>
   <div id="btn">
-    <input id="regbtn" type="submit" value="Register" style="float:right" />
-	<label id="page" style="float:;color:#668ECC"></label>
+    <input id="regbtn" type="submit" value="Register" style="float:right" /></br></br>
+  </div>
+  <div id="bottom">
+	<label id="page" style="color:#EBEBFF;float:left"></label>
+	<label id="info" style="color:#EBEBFF;float:right">X.B.&nbsp;@&nbsp;<a href="https://github.com/SaneBow/shhoDinningReg">More Info</a></label>
   </div>
   <script src="popup.js"></script> 
   <script src="jquery-2.1.1.min.js"></script></body>
