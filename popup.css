@@ -1,0 +1,9 @@
+﻿body {
+	width: 320px;
+}
+.content-div{
+	width:220px;
+	white-space:nowrap;
+	overflow-x:hidden;
+	text-overflow:ellipsis;
+}

@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+
+  "name": "SHHO Dinning AutoReg",
+  "description": "This extension is able to automatically register S.H.Ho communal dinning.",
+  "version": "1.0",
+  "background": {"scripts":["jquery-2.1.1.min.js","background.js"]},
+  "content_scripts": [
+	{
+		 "matches": ["https://cloud.itsc.cuhk.edu.hk/*"],	
+         "js": ["jquery-2.1.1.min.js","myContentScript.js"]
+	}
+  ],
+  "page_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html",
+	"default_title": "Dinning Auto Reg"
+  },
+  "permissions": ["tabs","storage"]
+}
+
