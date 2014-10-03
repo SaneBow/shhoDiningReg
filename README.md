@@ -9,8 +9,7 @@ S.H.Ho College Commual Dining Registration Extension for Chrome
  - Select dinings you want to register.
  - Click **_Register_** button.
  - Do nothing but wait. _(It may take a very long time)_
- - 
- Done when a popup message shows up.
+ - Done when a popup message shows up.
  - Go to next page and do the same thing.
 
 ## Notice
@@ -22,6 +21,7 @@ S.H.Ho College Commual Dining Registration Extension for Chrome
 
 ## Features
 
+ - Actually you can browse in other tabs while registering.
  - Need not to care about ever-registered dinings. We can detect them.
  - Skip the confirmation window. _(Brilliant idea from https://www.dropbox.com/s/quq4je5p0t5yyhs/reg.js?dl=0. Many thanks to the author.)_
 
