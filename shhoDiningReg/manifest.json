@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "SHHO Dinning AutoReg",
-  "description": "This extension is aimed at saving you from registering S.H.Ho communal dinning. You need not click repeatedly any more, instead, every thing will proceed automatically. Only thing you should do is having a cup of coffee and wait.",
+  "description": "This extension is aimed at saving you from registering S.H.Ho communal dinning.",
   "version": "1.0",
   "author": "X.B.",
   "background": {"scripts":["jquery-2.1.1.min.js","background.js"]},
