@@ -65,6 +65,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendRequest) {
 /* Get current page number */
 function getPage() {
     var pagenum = $("[style='color:#507CD1;background-color:White;']").find("span").text();
+	if (!pagenum) pagenum = 1;
     return pagenum;
 }
 

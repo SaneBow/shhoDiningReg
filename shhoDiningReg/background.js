@@ -67,7 +67,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
 		console.log("Received succeed message. Delete first to_reg item: "+to_reg[to_reg.length-1]);
 		to_reg.pop();
 		sendResponse({'confirmed':true});
-		if (to_reg.length == 0) alert("All done! Congratulations.");
+		if (to_reg.length == 0) alert("Finished!");
 	}
 });
 
