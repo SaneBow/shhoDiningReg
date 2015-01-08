@@ -29,7 +29,7 @@ S.H.Ho College Commual Dining Registration Extension for Chrome
 
  - Actually you can browse in other tabs while registering.
  - Need not to care about ever-registered dinings. We can detect them.
- - Skip the confirmation window. _(Brilliant idea from https://www.dropbox.com/s/quq4je5p0t5yyhs/reg.js?dl=0. Many thanks to the author.)_
+ - Skip the confirmation window. _(Brilliant idea from https://github.com/sheepfriend/DiningReg/blob/master/reg.js Many thanks to the author.)_
 
 ## About Me 
 
