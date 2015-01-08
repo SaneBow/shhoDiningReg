@@ -3,7 +3,7 @@
 
   "name": "SHHO Dinning AutoReg",
   "description": "This extension is aimed at saving you from registering S.H.Ho communal dinning.",
-  "version": "1.0",
+  "version": "1.1",
   "author": "X.B.",
   "background": {"scripts":["jquery-2.1.1.min.js","background.js"]},
   "content_scripts": [
