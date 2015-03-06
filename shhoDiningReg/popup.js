@@ -33,11 +33,25 @@ function getchklist(){
 	$(":checked").each(function(){indexes[i]=this.id;i++});
 	return indexes;
 } 
+
+
+/*Send stats information to server*/
+function stats_send(info) {
+	console.log("Sending stats info");
+	var events_str = '';
+	//Join event date (31-Mar) to a string
+	for (var i in info) {
+		events_str = events_str+dlist[i].substr(0,6)+',';
+	}
+	$("#stats").append("<img src='http://127.0.0.1/stats.php?count="+info.length+"&events="+events_str+"' style='display:none'>");
+}
  
 /*The function when register button clicked*/
 function doRegister(){
 	console.log("Register button clicked");
-	chrome.runtime.sendMessage({type:"DoReg", chklist:getchklist(), page:data.page});
+	var checked = getchklist();
+	stats_send(checked);
+	chrome.runtime.sendMessage({type:"DoReg", chklist:checked, page:data.page});
 }
 
 
