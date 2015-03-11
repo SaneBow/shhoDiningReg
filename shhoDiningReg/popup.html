@@ -1,49 +1,64 @@
-<html>	
-  <head>
-    <title>Dining List</title>
-    <style>
-        table {
-		font-weight: bold;
-		width:100%;
-        border-collapse: collapse;
-        }
-		tr:nth-child(even) {background: #b8d1f3}
-		tr:nth-child(odd) {background: #dae5f4}		
-		body {
-		background: #EBEBFF	;
-		min-width: 365px;
-		max-width: 100%;
-		position: relative;
-		vertical-align:middle;
-		}
-		#bottom {
-		min-height: 25px;
-		background: #4D6DCD;
-		}
-		#message {
-		background: #4D6DCD;
-		}
-	</style>
-  </head>
-  
-  <body>
-  <div id="message">
-    <h3 style="color:#F8F8FF">Select dining events to register:</h3>
-  </div>
-  <div id="content">
-    <table id="tbl"></table>
-  </div>
-  <div id="stats">
+<html>
 
-  </div>
-  </br>
-  <div id="btn">
-    <input id="regbtn" type="submit" value="Register" style="float:right" /></br></br>
-  </div>
-  <div id="bottom">
-	<label id="page" style="color:#F8F8FF;float:left"></label>
-	<label id="info" style="color:#F8F8FF;float:right">X.B.&nbsp;@&nbsp;<a href="https://github.com/SaneBow/shhoDinningReg" target="_blank">More Info</a></label>
-  </div>
-  <script src="popup.js"></script> 
-  <script src="jquery-2.1.1.min.js"></script></body>
+<head>
+    <title>Dining List</title>
+    <style id="tableCSS">
+        table {
+            font-weight: bold;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        tr:nth-child(even) {
+            background: #b8d1f3
+        }
+        
+        tr:nth-child(odd) {
+            background: #dae5f4
+        }
+        
+        body {
+            background: #EBEBFF;
+            min-width: 365px;
+            max-width: 100%;
+            position: relative;
+            vertical-align: middle;
+        }
+        
+        #bottom {
+            min-height: 25px;
+            background: #4D6DCD;
+        }
+        
+        #message {
+            background: #4D6DCD;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="message">
+        <h3 style="color:#F8F8FF">Select dining events to register:</h3>
+    </div>
+    <div id="content">
+        <table id="tbl"></table>
+    </div>
+    <div id="stats">
+    </div>
+    </br>
+    <div id="control">
+        <div id="btn" >
+            <input class="myButton" id="regbtn" type="submit" value="Register" style="float:right"/>
+            </br>
+            </br>
+        </div>
+    </div>
+    <div id="bottom">
+        <label id="page" style="color:#F8F8FF;float:left"></label>
+        <label id="info" style="color:#F8F8FF;float:right">X.B.&nbsp;@&nbsp;<a href="https://github.com/SaneBow/shhoDinningReg" target="_blank">More Info</a></label>
+    </div>
+    <script src="popup.js"></script>
+    <script src="jquery-2.1.1.min.js"></script>
+</body>
+
 </html>

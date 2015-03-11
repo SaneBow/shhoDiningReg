@@ -27,7 +27,9 @@
 
 var imgsrc = $("#ctl00_imgAppBanner").prop("src");
 var pagenum = getPage();
-if (imgsrc.indexOf("23.jpg") > 0) {
+var username = getName();
+
+if (imgsrc && imgsrc.indexOf("23.jpg") > 0) {
     /* On the first-step page */
     var links = $("#ctl00_ContentPlaceHolder1_gvEventList").find(".textwrap").find("a");
     if (links.length != 0) {
@@ -69,6 +71,12 @@ function getPage() {
     return pagenum;
 }
 
+/* Get user name, to prevent duplicate stats */
+function getName() {
+	var username = $("#ctl00_lblHelloMsg").text().substr(9);
+	return username;
+}
+
 /* Inject code into the original page */
 function injectCode(code) {
     var actualCode = code;
@@ -107,7 +115,7 @@ function secondStep() {
 
 function thirdStep() {
     console.log("btnNext clicked");
-	/* This part of code use the brilliant idea from https://www.dropbox.com/s/quq4je5p0t5yyhs/reg.js?dl=0 */
+	/* This part of code use the brilliant idea from https://github.com/sheepfriend/reg_dining_javascript */
     injectCode(['temp=document.getElementById("ctl00_ContentPlaceHolder1_btnCancel");',
 				'temp.id="ctl00_ContentPlaceHolder1_btnNext";',
 				'temp.name="ctl00$ContentPlaceHolder1$btnNext";',
@@ -137,7 +145,7 @@ function getNextReg() {
                 arr[i]=links[i].text;
             }
             console.log("current at page " + pagenum);
-            chrome.runtime.sendMessage({type:"GotDiningList", dlist:arr, page:pagenum});
+            chrome.runtime.sendMessage({type:"GotDiningList", dlist:arr, page:pagenum, name:username});
         }
         /* If error */
         else if (nextone == "Error") {

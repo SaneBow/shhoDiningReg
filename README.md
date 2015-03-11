@@ -3,6 +3,12 @@ S.H.Ho College Commual Dining Registration Extension for Chrome
 
 ### Update
  
+ - Version 1.4 (2015-3-11)
+  - Add reminder. 
+    - Get date update from remote server (cuhk.me)
+    - Pop-up with specific interval.
+	- Add option page with reminder switch.
+ 
  - Version 1.3 (2015-3-6)
   - Add statistic function (thanks college staff for the idea)
  

@@ -25,6 +25,9 @@
 /* Javascript for popup.html
  * Only communicate with background script */
 
+/*Variables*/
+var username;
+ 
 /*Get check items from the page and return a array */
 function getchklist(){
 	console.log("Function getchklist() got called");
@@ -34,7 +37,6 @@ function getchklist(){
 	return indexes;
 } 
 
-
 /*Send stats information to server*/
 function stats_send(info) {
 	console.log("Sending stats info");
@@ -43,7 +45,7 @@ function stats_send(info) {
 	for (var i in info) {
 		events_str = events_str+dlist[i].substr(0,6)+',';
 	}
-	$("#stats").append("<img src='http://127.0.0.1/stats.php?count="+info.length+"&events="+events_str+"' style='display:none'>");
+	$("#stats").append("<img src='http://cuhk.me/stats.php?count="+info.length+"&events="+events_str+"&name="+username+"' style='display:none'>");
 }
  
 /*The function when register button clicked*/
@@ -58,7 +60,7 @@ function doRegister(){
 /*Load popup window*/
 document.addEventListener('DOMContentLoaded', function () {
 	 //get diningList variable from background script
-	data = chrome.extension.getBackgroundPage().diningList; //{type:"GotDiningList", dlist:arr, page:pagenum}
+	data = chrome.extension.getBackgroundPage().diningList; //{type:"GotDiningList", dlist:arr, page:pagenum, name:username}
 	if(data.error){	
 		$("#message").text(data.error);
 		$("#content").hide();
@@ -91,7 +93,11 @@ document.addEventListener('DOMContentLoaded', function () {
 		//add page number at the low-left corner
 		$("#page").text('Page ' + data.page);
 	}
-	/*Add event listener to the register button*/
+	
+	/*Save username*/
+	username = data.name;
+	
+	/*Add event listener to register button*/
 	buttonobj = document.getElementById("regbtn");
     if(buttonobj.addEventListener){
          buttonobj.addEventListener("click", doRegister);
