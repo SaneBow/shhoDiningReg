@@ -1,9 +1,9 @@
 {
 	"manifest_version": 2,
 
-	"name": "SHHO Dinning AutoReg",
-	"description": "This extension is for registering S.H.Ho communal dinning.",
-	"version": "1.4",
+	"name": "SHHO Dining AutoReg",
+	"description": "This extension is for registering S.H.Ho communal dining.",
+	"version": "1.4.1",
 	"author": "X.B.",
   
 	"background": {

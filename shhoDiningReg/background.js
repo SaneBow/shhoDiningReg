@@ -39,11 +39,34 @@ var to_reg = new Array();
 var diningList={}; 
 diningList.error="No data Found!" //Default text to display if no dining event found in page
 
+/* for items on other pages loaded */
+var new_loaded={}; //{ready:true, lists:[{dlist:arr,page:pagenum},{dlist:arr,page:pagenum}]}
+
 /* Add an message listener to handle all the messages from both content script and popup */
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
 	if (request.type=="GotDiningList") { 	//{type:"GotDiningList", dlist:arr, page:pagenum, name=username}
 		console.log("Background received GotDiningList message");
 		diningList = request; 
+	}
+
+	if (request.type=="LoadPages") {     //{type:"LoadPages", loaded:bool, page:currentpage, newitems:arr}
+		console.log("Background received LoadPages message");
+		if (!request.loaded) {
+			/* Call content script for load next pages */
+			console.log("Loading pages...")
+			for (var p=1;p<=maxpage;p++) {
+				doPageLoad(page); /*	TODO  
+				(send message to content script, 
+				then content script redirect to "page"
+				and send list back,
+				*/
+			}
+			new_loaded.ready = true;
+		}
+		if (request.loaded) {
+			console.log("Page "+request.page+" loaded, storing items in new_loaded");
+			new_loaded.lists[request.page-1] = {dlist:request.newitems,page:request.page};
+		}
 	}
 	
 	if (request.type=="DoReg") { 	//{type:"DoReg", chklist:getchklist(), page:data.page}

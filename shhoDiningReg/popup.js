@@ -56,6 +56,12 @@ function doRegister(){
 	chrome.runtime.sendMessage({type:"DoReg", chklist:checked, page:data.page});
 }
 
+/*The function to load next page (will actually load all available pages)*/
+function loadNextPage(){
+	console.log("Load Next Page icon clicked");
+	chrome.runtime.sendMessage({type:"LoadPages"});
+}
+
 
 /*Load popup window*/
 document.addEventListener('DOMContentLoaded', function () {
@@ -101,5 +107,11 @@ document.addEventListener('DOMContentLoaded', function () {
 	buttonobj = document.getElementById("regbtn");
     if(buttonobj.addEventListener){
          buttonobj.addEventListener("click", doRegister);
+    }
+
+    /*Add event listener to Load Next Page icon*/
+    iconobj = document.getElementById("loadicon");
+    if (loadicon.addEventListener) {
+    	loadicon.addEventListener("click",loadNextPage);
     }
 });
