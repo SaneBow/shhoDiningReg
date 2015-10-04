@@ -3,7 +3,7 @@
 
 	"name": "SHHO Dining AutoReg",
 	"description": "This extension is for registering S.H.Ho communal dining.",
-	"version": "1.4.2",
+	"version": "1.4.3",
 	"author": "X.B.",
   
 	"background": {

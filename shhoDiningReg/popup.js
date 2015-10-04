@@ -42,8 +42,9 @@ function stats_send(info) {
 	console.log("Sending stats info");
 	var events_str = '';
 	//Join event date (31-Mar) to a string
-	for (var i in info) {
-		events_str = events_str+dlist[i].substr(0,6)+',';
+	console.log(info);
+	for (var i=0;i<info.length;i++) {
+		events_str = events_str+dlist[parseInt(info[i])].substr(0,6)+',';
 	}
 	$("#stats").append("<img src='http://cuhk.me/stats.php?count="+info.length+"&events="+events_str+"&name="+username+"' style='display:none'>");
 }
