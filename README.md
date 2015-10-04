@@ -1,7 +1,7 @@
 S.H.Ho College Commual Dining Registration Extension for Chrome
 ===========================================================
 
-### Update
+### Major Updates Log
  
  - Version 1.4 (2015-3-11)
   - Add reminder. 

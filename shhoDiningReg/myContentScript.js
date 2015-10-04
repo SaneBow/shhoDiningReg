@@ -146,6 +146,13 @@ function getNextReg() {
             }
             console.log("current at page " + pagenum);
             chrome.runtime.sendMessage({type:"GotDiningList", dlist:arr, page:pagenum, name:username});
+
+            //Show usage banner
+            if ($(".fixLayout") && $(".fixLayout").html().indexOf("Communal Dining") > 0 ) {
+                $("body").prepend('<h3 style="background-color:yellow;display:inline;">\
+                    Click the icon in address bar to access the dining-reg plugin\
+                    </h3>');
+            }
         }
         /* If error */
         else if (nextone == "Error") {

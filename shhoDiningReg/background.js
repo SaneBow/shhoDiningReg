@@ -52,7 +52,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
 	if (request.type=="LoadPages") {     //{type:"LoadPages", loaded:bool, page:currentpage, newitems:arr}
 		console.log("Background received LoadPages message");
 		if (!request.loaded) {
-			/* Call content script for load next pages */
+			/* Call content script for loading next pages */
 			console.log("Loading pages...")
 			for (var p=1;p<=maxpage;p++) {
 				doPageLoad(page); /*	TODO  
